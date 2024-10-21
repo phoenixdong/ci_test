@@ -35,6 +35,11 @@ jobs:
     - name: Check for Specific Approver
       run: |
         # List of specific approvers to check
+        
+        echo "${{ vars.SPECIFIC_APPROVERS }}"
+        echo "${ SPECIFIC_APPROVERS }"
+        echo "$SPECIFIC_APPROVERS"
+
         IFS=',' read -r -a SPECIFIC_APPROVERS <<< "$SPECIFIC_APPROVERS"
         APPROVED="false"
 
