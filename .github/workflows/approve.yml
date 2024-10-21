@@ -3,8 +3,9 @@ name: approve
 on:
   push:
     branches: [ "main" ]
-    types: [opened, synchronize, reopened]
-
+  pull_request:
+    branches: [ "main" ]
+    
 jobs:
   approve:
     runs-on: ubuntu-latest
