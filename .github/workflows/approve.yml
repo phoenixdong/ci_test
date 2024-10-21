@@ -8,7 +8,7 @@ on:
 
 env:
   # Setting an environment variable with the value of a configuration variable
-  aaa: ${{ vars.SPECIFIC_APPROVERS }}
+  aaa: ${{ test_1.SPECIFIC_APPROVERS }}
     
 jobs:
   approve:
@@ -22,5 +22,5 @@ jobs:
       run: |
         # List of specific approvers to check
 
-        echo "${{ vars.SPECIFIC_APPROVERS }}"
+        echo "${{ test_1.SPECIFIC_APPROVERS }}"
         echo "$aaa"
