@@ -8,11 +8,12 @@ on:
 
 env:
   # Setting an environment variable with the value of a configuration variable
-  aaa: ${{ test_1.SPECIFIC_APPROVERS }}
+  aaa: ${{ vars.SPECIFIC_APPROVERS }}
     
 jobs:
   approve:
     runs-on: ubuntu-latest
+    environment: test_1
 
     steps:
     - name: Checkout Code
@@ -22,5 +23,6 @@ jobs:
       run: |
         # List of specific approvers to check
 
-        echo "${{ test_1.SPECIFIC_APPROVERS }}"
+        echo "${{ vars.SPECIFIC_APPROVERS }}"
+        echo "${ aaa }"
         echo "$aaa"
