@@ -8,7 +8,7 @@ on:
 
 env:
   # Setting an environment variable with the value of a configuration variable
-  SPECIFIC_APPROVERS: ${{ vars.SPECIFIC_APPROVERS }}
+  aaa: ${{ vars.SPECIFIC_APPROVERS }}
     
 jobs:
   approve:
@@ -35,17 +35,17 @@ jobs:
     - name: Check for Specific Approver
       run: |
         # List of specific approvers to check
-        
-        echo "${{ vars.SPECIFIC_APPROVERS }}"
-        echo "${ SPECIFIC_APPROVERS }"
-        echo "$SPECIFIC_APPROVERS"
 
-        IFS=',' read -r -a SPECIFIC_APPROVERS <<< "$SPECIFIC_APPROVERS"
+        echo "${{ vars.SPECIFIC_APPROVERS }}"
+        echo "${ aaa }"
+        echo "$aaa"
+
+        IFS=',' read -r -a SPECIFIC_APPROVERS <<< "$aaa"
         APPROVED="false"
 
         echo "${{ vars.SPECIFIC_APPROVERS }}"
-        echo "${ SPECIFIC_APPROVERS }"
-        echo "$SPECIFIC_APPROVERS"
+        echo "${ aaa }"
+        echo "$aaa"
 
         # Check if any of the specific approvers have approved the PR
         for APPROVER in "${SPECIFIC_APPROVERS[@]}"
