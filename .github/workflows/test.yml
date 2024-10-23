@@ -17,3 +17,7 @@ jobs:
     - name: test Repository variables
       run: |
         echo "${{ vars.AAA }}"
+
+
+
+        
