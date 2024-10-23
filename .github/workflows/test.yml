@@ -1,0 +1,19 @@
+name: approve
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: test Repository variables
+      run: |
+        echo "${{ vars.AAA }}"
